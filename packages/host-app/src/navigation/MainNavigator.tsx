@@ -1,16 +1,17 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
 import {
   createNativeStackNavigator,
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 
-import HomeScreen from '../screens/HomeScreen';
 import DetailScreen from '../screens/DetailScreen';
+import BottomTabNavigation from './bottom-tab/TabNavigation';
 
 export type MainStackParamList = {
+  Tab: undefined;
   Home: undefined;
   Detail: undefined;
+  MiniApp: undefined;
 };
 
 export type MainStackNavigationProp =
@@ -22,25 +23,13 @@ const MainNavigator = () => {
   return (
     <Main.Navigator
       screenOptions={{
-        headerTitle: 'HostApp',
-        headerBackTitleVisible: false,
-        headerStyle: styles.header,
-        headerTitleStyle: styles.headerTitle,
-        headerTintColor: 'rgba(255,255,255,1)',
+        headerShown: false,
       }}>
-      <Main.Screen name="Home" component={HomeScreen} />
+      <Main.Screen name="Tab" component={BottomTabNavigation} />
       <Main.Screen name="Detail" component={DetailScreen} />
     </Main.Navigator>
   );
 };
 
-const styles = StyleSheet.create({
-  header: {
-    backgroundColor: 'rgba(56, 30, 114, 1)',
-  },
-  headerTitle: {
-    color: 'rgba(255,255,255,1)',
-  },
-});
 
 export default MainNavigator;
