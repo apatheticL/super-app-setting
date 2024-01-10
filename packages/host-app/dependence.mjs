@@ -43,6 +43,15 @@ const deps = {
     singleton: true,
     eager: true,
     requiredVersion: '6.2.3',
-  }
+  },
+  '@react-native-async-storage/async-storage':{
+    singleton: true,
+    eager: true,
+    requiredVersion: '1.17.11',},
+  'react-native-fast-image':{
+    singleton: true,
+    eager: true,
+    requiredVersion: '8.6.3',},
+
 };
 export {deps};

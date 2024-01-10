@@ -4,6 +4,7 @@ import {MainStackNavigationProp} from '../../navigation/MainNavigator';
 import {HomeComponent} from "./HomeComponent";
 
 const HomeScreen = () => {
+
     const navigation = useNavigation<MainStackNavigationProp>();
     const onProductPress = () => {
 
@@ -18,7 +19,8 @@ const HomeScreen = () => {
 
     }
     const onMarketPress = () => {
-
+        console.log('ádasdasdasdas')
+        navigation.navigate('Shopping')
     }
     return (
         <HomeComponent onProductPress={onProductPress} onServicePress={onServicePress} onClinicPress={onClinicPress}

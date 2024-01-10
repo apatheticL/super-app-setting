@@ -2,7 +2,7 @@ import {TouchableOpacity, View, Text, Image, StyleSheet} from 'react-native';
 import React from 'react';
 import {IconSources} from '../../assets/icons';
 import {BackgroundBottomTab} from './background-bottombar';
-const MyTab = ({state, descriptors, navigation}) => {
+export function MyTabBar ({state, descriptors, navigation}) {
   return (
     <View style={{flexDirection: 'row'}}>
       <BackgroundBottomTab />
@@ -90,4 +90,3 @@ const styles = StyleSheet.create({
     height: 27,
   },
 });
-export default MyTab;

@@ -47,9 +47,9 @@ export default (env) => {
    * to check its value to avoid accessing undefined value,
    * otherwise an error might occur.
    */
-  // if (devServer) {
-  //   devServer.hmr = false;
-  // }
+  if (devServer) {
+    devServer.hmr = true;
+  }
 
   /**
    * Depending on your Babel configuration you might want to keep it.
@@ -94,9 +94,10 @@ export default (env) => {
        * dependency. You might need it when using workspaces/monorepos or unconventional project
        * structure. For simple/typical project you won't need it.
        */
-      // alias: {
-      //   'react-native': reactNativePath,
-      // },
+      alias: {
+        '@sentry': new URL('./node_modules/@sentry', import.meta.url).pathname,
+        '@sentry-internal': new URL('./node_modules/@sentry-internal', import.meta.url).pathname,
+      },
     },
     /**
      * Configures output.
@@ -164,6 +165,9 @@ export default (env) => {
             /node_modules(.*[/\\])+@callstack\/repack/,
             /node_modules(.*[/\\])+react-native-reanimated/,
             /node_modules(.*[/\\])+react-native-gesture-handler/,
+            /node_modules(.*[/\\])+react-native-fast-image/,
+            /node_modules(.*[/\\])+@sentry\//,
+            /node_modules(.*[/\\])+@sentry-internal\//,
 
           ],
           use: 'babel-loader',
@@ -190,6 +194,9 @@ export default (env) => {
             /node_modules(.*[/\\])+@callstack\/repack/,
             /node_modules(.*[/\\])+react-native-reanimated/,
             /node_modules(.*[/\\])+react-native-gesture-handler/,
+            /node_modules(.*[/\\])+react-native-fast-image/,
+            /node_modules(.*[/\\])+@sentry\//,
+            /node_modules(.*[/\\])+@sentry-internal\//,
 
           ],
           use: {
@@ -215,6 +222,10 @@ export default (env) => {
             /node_modules(.*[/\\])+@callstack\/repack/,
             /node_modules(.*[/\\])+react-native-reanimated/,
             /node_modules(.*[/\\])+react-native-gesture-handler/,
+            /node_modules(.*[/\\])+react-native-fast-image/,
+            /node_modules(.*[/\\])+@sentry\//,
+            /node_modules(.*[/\\])+@sentry-internal\//,
+
           ],
           use: {
             loader: 'babel-loader',
