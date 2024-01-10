@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "997094479023",
+    "firebase_url": "https://appdemostudy-default-rtdb.firebaseio.com",
+    "project_id": "appdemostudy",
+    "storage_bucket": "appdemostudy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997094479023:android:1c07b1ea25518a7240705a",
+        "android_client_info": {
+          "package_name": "com.hostapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWTMlDr6TcRbXZUcspAFNfVcH7Rclse70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
