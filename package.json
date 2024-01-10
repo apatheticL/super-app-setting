@@ -6,10 +6,9 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/host-app",
-    "packages/mini-app"
+    "packages/host-app"
   ],
-  "packageManager": "yarn@3.4.1",
+  "packageManager": "yarn@3.2.1",
   "scripts": {
     "bootstrap": "yarn && yarn workspaces foreach run bootstrap",
     "start": "concurrently -P 'yarn:start:*(!standalone) {1}'",
@@ -19,7 +18,7 @@
     "run:host-app:android": "yarn workspace HostApp run android",
     "run:mini-app:ios": "yarn workspace MiniApp run ios",
     "run:mini-app:android": "yarn workspace MiniApp run android",
-    "adbreverse": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:9000 tcp:9000"
+    "adbreverse": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:9000 tcp:9000 && adb reverse tcp:9001 tcp:9001"
   },
   "devDependencies": {
     "concurrently": "^7.6.0"
