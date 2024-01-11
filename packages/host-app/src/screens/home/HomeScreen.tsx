@@ -10,7 +10,7 @@ const HomeScreen = () => {
 
     }
     const onServicePress = () => {
-
+        //navigation.navigate('tesst')
     }
     const onClinicPress = () => {
 
@@ -19,7 +19,6 @@ const HomeScreen = () => {
 
     }
     const onMarketPress = () => {
-        console.log('ádasdasdasdas')
         navigation.navigate('Shopping')
     }
     return (

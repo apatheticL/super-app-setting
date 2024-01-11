@@ -5,6 +5,7 @@ import App from "./App";
 import {View} from "react-native";
 import {Federated} from "@callstack/repack/client";
 import * as Sentry from "@sentry/react-native";
+import { CaptureConsole } from '@sentry/integrations';
 
 export const routingInstrumentation = new Sentry.ReactNavigationInstrumentation();
 
@@ -23,6 +24,9 @@ const AppContainer  =() =>{
                     routingInstrumentation,
                     // ...
                 }),
+                new CaptureConsole({
+                    levels: ['error']
+                })
             ],
         });
         initReducersAndConfig();

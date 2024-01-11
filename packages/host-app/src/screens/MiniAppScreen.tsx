@@ -5,7 +5,7 @@ import ErrorBoundary from '../components/ErrorBoundary';
 import * as Sentry from "@sentry/react-native";
 
 const MiniAppNavigator = React.lazy(() =>
-  Federated.importModule('MiniApp', './MiniAppNavigator'),
+  Federated.importModule('MiniApp', './MiniAppNavigator')
 );
 const FallbackComponent = () => (
 

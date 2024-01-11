@@ -2,7 +2,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import MiniAppScreen from '../../screens/MiniAppScreen';
 import HomeScreen from '../../screens/home/HomeScreen';
-import ProfleScreen from '../../screens/ProfileScreen';
+import ProfileScreen from '../../screens/ProfileScreen';
 import {MyTabBar} from "./MyTabBar";
 import MiniAppNavigator from "../MiniAppNavigation";
 export type BottomTabNavigation = {
@@ -20,7 +20,7 @@ const BottomTabNavigation = () => {
       tabBar={props => <MyTabBar {...props} />}>
       <Tab.Screen name="Home" component={MiniAppNavigator} />
       <Tab.Screen name="MiniApp" component={HomeScreen} />
-      <Tab.Screen name="Profile" component={ProfleScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 };

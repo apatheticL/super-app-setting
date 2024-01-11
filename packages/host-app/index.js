@@ -2,6 +2,7 @@ import {AppRegistry, Platform} from 'react-native';
 import {name as appName} from './app.json';
 import {ScriptManager, Federated} from "@callstack/repack/client";
 import AppContainer from "./src/AppContainer";
+import * as Sentry from "@sentry/react-native/dist/js";
 
 
 ScriptManager.shared.addResolver(async (scriptId, caller) => {
@@ -27,4 +28,7 @@ ScriptManager.shared.addResolver(async (scriptId, caller) => {
     };
 
 });
+ScriptManager.shared.on('error', (scriptIds) => {
+    Sentry.captureException(new Error(JSON.stringify(scriptIds)), );
+})
 AppRegistry.registerComponent(appName, () => AppContainer);
